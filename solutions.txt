@@ -1,0 +1,41 @@
+echo "Hello World"
+mkdir new_dir
+rm -r new_dir
+mkdir lorem-copy
+cp sed.txt lorem-copy
+cp at.txt lorem.txt lorem-copy
+cd lorem-copy
+cat sed.txt
+cat at.txt lorem.txt
+head -n 3 sed.txt
+tail -n 3 sed.txt
+echo "Homo homini lupus." >> sed.txt
+tail -n 3 sed.txt
+sed 's/et/ET/g' at.txt
+whoami
+pwd
+cd ..
+ls *.txt
+wc -l sed.txt
+find / -name "lorem" | wc -l
+grep "et" at.txt
+grep "et" at.txt | wc -l
+cd lorem-copy
+grep -rc "et"
+cd ..
+name=ruben
+echo $name
+mkdir $name
+rm -r $name
+ps axj
+sysctl machdep.cpu
+
+tar -zcvf lorem-compressed.tar.gz lorem lorem/lorem-copy
+mkdir lorem-uncompressed
+cd lorem-uncompressed
+tar -zxvf lorem-compressed.tar.gz
+cd ..
+for i in {1..100}
+do
+   echo $i
+done
