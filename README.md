@@ -22,6 +22,7 @@ README.md lorem solutions.ipynb
 ```
 3. Intenta hacer todos los ejercicios sin cambiar de directorio. 
 
+h1r0nK1d$co
 ## Ejercicios
 
 * Imprime en consola `Hello World`.
@@ -52,7 +53,6 @@ README.md lorem solutions.ipynb
 
 * Encuentra dónde estás en tu sistema de ficheros.
 
-* Lista los archivos que terminan por `.txt` en la carpeta lorem.
 
 * Cuenta el número de líneas que tiene el archivo `sed.txt` dentro de la carpeta lorem. 
 
@@ -66,8 +66,7 @@ README.md lorem solutions.ipynb
 
 ## Ficheros bash
 
-Cualquier comando o comandos de bash se pueden almacenar en un fichero y ejecutar cuando queramos. 
-Obviamente puedes utilizar tu editor preferido. Creamos el fichero: 
+Cualquier comando o comand
 ```
 $ touch list_files.sh
 ```
