@@ -1,0 +1,49 @@
+﻿1.	Imprime en consola Hello World.
+echo "hello world" >> C:\Users\axell\Documents\IronHack\1.1-lab-bash\solutions.txt
+hello world
+2.	Crea un directorio nuevo llamado new_dir
+Cd C:\Users\axell\documents\ironhack\1.1-lab-bash
+mkdir new_dir
+
+
+3.	Elimina ese directorio.
+rm new_dir
+4.	Copia el archivo sed.txt dentro de la carpeta lorem a la carpeta lorem-copy. TIP: Puede ser necesario crear la carpeta lorem-copy primero.
+cd C:\Users\axell\documents\ironhack\1.1-lab-bash
+mkdir copy_lorem
+cp C:\Users\axell\Documents\IronHack\1.1-lab-bash\lorem\sed.txt C:\Users\axell\Documents\IronHack\1.1-lab-bash\copy_lorem
+5.	Copia los otros dos archivos de la carpeta lorem a la carpeta lorem-copy en una sola línea.
+cp at.txt ../copy_lorem/
+cp lorem.txt ../copy_lorem/
+6.	Muestra el contenido del archivo sed.txt dentro de la carpeta lorem.
+cat sed.txt
+7.	Muestra el contenido de los archivos at.txt y lorem.txt dentro de la carpeta lorem.
+cat lorem.txt
+cat at.txt
+8.	Visualiza las primeras 3 líneas del archivo sed.txt dentro de la carpeta lorem-copy
+Get-Content sed.txt -TotalCount 3
+9.	Visualiza las ultimas 3 líneas del archivo sed.txt dentro de la carpeta lorem-copy
+Get-Content file.txt -Tail 3
+10.	Añade Homo homini lupus. al final de archivo sed.txt dentro de la carpeta lorem-copy.
+echo "Homo homini lupus." >> sed.txt
+11.	Visualiza las últimas 3 líneas del archivo sed.txt dentro de la carpeta lorem-copy. Deberías ver ahora Homo homini lupus..
+Get-Content sed.txt -Tail 3
+12.	Sustituye todas las apariciones de et por ET del archivo at.txt dentro de la carpeta lorem-copy. Deberás usar sed.
+(Get-Content at.txt) | ForEach-Object {$_ -replace 'et', 'ET'} | Set-Content at.txt
+13.	Encuentra al usuario activo en el sistema.
+whoami
+14.	Encuentra dónde estás en tu sistema de ficheros.
+ls
+15.	Lista los archivos que terminan por .txt en la carpeta lorem.
+ls | Where-Object {$_.Name -match ".*\.txt"}
+16.	Cuenta el número de líneas que tiene el archivo sed.txt dentro de la carpeta lorem.
+(Get-Content sed.txt).Count
+17.	Cuenta el número de archivos que empiezan por lorem que están en este directorio y en directorios internos.
+ls | Where-Object {$_.Name -match "lorem*"}
+18.	Encuentra todas las apariciones de et en at.txt dentro de la carpeta lorem.
+(Select-String -Path at.txt -Pattern "et" -AllMatches).Matches.Value
+19.	Cuenta el número de apariciones del string et en at.txt dentro de la carpeta lorem.
+(Get-Content at.txt) -match "et" | Measure-Object
+
+20.	Cuenta el número de apariciones del string et en todos los archivos del directorio lorem-copy.
+(Select-String -Path "copy_lorem/*.txt" -Pattern "et" -AllMatches).Matches.Value
